@@ -4,28 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile Diri - Detail Interaktif</title>
+
+  <!-- Menghubungkan CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Bagian Header -->
   <header>
-    <h1>Detail Profile</h1>
+    <h1>Detail Profil</h1>
   </header>
 
-  <div class="profile-container">
-    <div class="box-list" id="boxList">
+  <!-- Kontainer utama -->
+  <main class="profile-container">
+    <!-- Daftar kotak (menu profil) -->
+    <section class="box-list" id="boxList">
       <div class="box" data-detail="keahlian">Keahlian</div>
       <div class="box" data-detail="kekurangan">Kekurangan</div>
       <div class="box" data-detail="hard">Hard Skill</div>
       <div class="box" data-detail="soft">Soft Skill</div>
       <div class="box" data-detail="pendidikan">Riwayat Pendidikan</div>
-    </div>
+    </section>
 
-    <div class="detail-panel" id="detailPanel">
+    <!-- Panel detail yang muncul di kanan -->
+    <aside class="detail-panel" id="detailPanel">
       <h2 id="detailTitle">Judul</h2>
       <p id="detailContent">Klik salah satu kotak di kiri untuk melihat detailnya.</p>
-    </div>
-  </div>
+    </aside>
+  </main>
 
+  <!-- Menghubungkan JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Saya - Aulia Devita Ariski</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Diri - Detail Interaktif</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <h1 class="logo">My Profile</h1>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="detail.html">Detail Profile</a></li>
-    </ul>
-  </nav>
+  <header>
+    <h1>Detail Profile</h1>
+  </header>
 
-  <section class="home-section fade-in">
-    <img src="aul.jpg.jpg" alt="Foto Saya" class="profile-img">
-    <h2>Aulia Devita Ariski</h2>
-    <p>
-      Halo! Saya Aulia Devita Ariski, seseorang yang bersemangat dalam dunia teknologi dan desain.
-      Saya senang mempelajari hal baru serta mengembangkan diri dalam bidang kreativitas dan pemecahan masalah.
-    </p>
-  </section>
+  <div class="profile-container">
+    <div class="box-list" id="boxList">
+      <div class="box" data-detail="keahlian">Keahlian</div>
+      <div class="box" data-detail="kekurangan">Kekurangan</div>
+      <div class="box" data-detail="hard">Hard Skill</div>
+      <div class="box" data-detail="soft">Soft Skill</div>
+      <div class="box" data-detail="pendidikan">Riwayat Pendidikan</div>
+    </div>
 
-  <footer>
-    © 2025 Aulia Devita Ariski | All Rights Reserved
-  </footer>
+    <div class="detail-panel" id="detailPanel">
+      <h2 id="detailTitle">Judul</h2>
+      <p id="detailContent">Klik salah satu kotak di kiri untuk melihat detailnya.</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

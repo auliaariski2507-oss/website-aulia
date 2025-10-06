@@ -1,65 +1,38 @@
-// Jalankan script setelah semua elemen termuat
 document.addEventListener("DOMContentLoaded", () => {
-  const boxes = document.querySelectorAll(".box");
-  const detailPanel = document.getElementById("detailPanel");
+  const cards = document.querySelectorAll(".card");
   const detailTitle = document.getElementById("detailTitle");
-  const detailContent = document.getElementById("detailContent");
-  const boxList = document.getElementById("boxList");
+  const detailText = document.getElementById("detailText");
 
-  // Pastikan semua elemen ada
-  if (!boxes.length || !detailPanel || !detailTitle || !detailContent || !boxList) {
-    console.error("Elemen antarmuka tidak ditemukan. Periksa kembali ID atau class HTML-nya.");
-    return;
-  }
-
-  // Data detail
-  const details = {
+  const detailData = {
     keahlian: {
-      title: "Keahlian",
-      text: "Saya memiliki kemampuan dalam desain UI/UX, coding front-end (HTML, CSS, JS), dan analisis data sederhana."
-    },
-    kekurangan: {
-      title: "Kekurangan",
-      text: "Terkadang terlalu perfeksionis dalam pekerjaan, sehingga memakan waktu lebih lama untuk menyelesaikan suatu tugas."
+      title: "Keahlian & Kekurangan",
+      text: "Saya memiliki keahlian dalam desain UI/UX dan dasar pengembangan web. Kekurangan saya adalah terkadang terlalu perfeksionis dalam mengerjakan sesuatu, namun hal itu juga membuat saya lebih teliti."
     },
     hard: {
       title: "Hard Skill",
-      text: "HTML, CSS, JavaScript, Microsoft Excel, Figma, Canva, dan analisis data dasar."
+      text: "HTML, CSS, JavaScript, Figma, Canva, dan dasar-dasar bahasa pemrograman seperti Python dan C++."
     },
     soft: {
       title: "Soft Skill",
-      text: "Komunikasi yang baik, kerja sama tim, adaptif terhadap lingkungan baru, dan problem solving."
+      text: "Komunikatif, mampu bekerja dalam tim, kreatif, bertanggung jawab, serta memiliki kemampuan manajemen waktu yang baik."
     },
     pendidikan: {
       title: "Riwayat Pendidikan",
-      text: "Lulusan SMA Negeri 3 Mojokerto, jurusan IPA. Saat ini melanjutkan studi di bidang Teknologi Informasi."
+      text: "SDN 1 Contoh (2013-2019) → SMPN 2 Contoh (2019-2022) → SMAN 3 Mojokerto (2022-Sekarang)."
     }
   };
 
-  // Klik setiap box → tampilkan panel detail
-  boxes.forEach(box => {
-    box.addEventListener("click", (e) => {
-      e.stopPropagation(); // Supaya klik tidak ikut event body
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const key = card.dataset.detail;
+      detailTitle.textContent = detailData[key].title;
+      detailText.textContent = detailData[key].text;
 
-      const type = box.dataset.detail;
-      const detail = details[type];
-
-      if (detail) {
-        detailTitle.textContent = detail.title;
-        detailContent.textContent = detail.text;
-        boxList.classList.add("shift-left");
-        detailPanel.classList.add("active");
-      } else {
-        console.warn(`Detail untuk tipe '${type}' tidak ditemukan.`);
-      }
+      // Efek animasi saat ganti isi
+      const panel = document.getElementById("detailPanel");
+      panel.classList.remove("fade-in");
+      void panel.offsetWidth; // reset animasi
+      panel.classList.add("fade-in");
     });
-  });
-
-  // Klik di luar area box & panel → tutup panel
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".box") && !detailPanel.contains(e.target)) {
-      detailPanel.classList.remove("active");
-      boxList.classList.remove("shift-left");
-    }
   });
 });

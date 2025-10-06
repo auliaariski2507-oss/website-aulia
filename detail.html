@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navigasi -->
   <nav class="navbar">
     <h1 class="logo">My Profile</h1>
     <ul>
@@ -15,12 +16,13 @@
     </ul>
   </nav>
 
-  <section class="detail-section fade-in">
+  <!-- Bagian utama detail profil -->
+  <main class="detail-section fade-in">
     <h2>Detail Profile</h2>
 
     <div class="content-container">
-      <!-- Bagian kiri: Card utama -->
-      <div class="cards-container">
+      <!-- Kartu kiri -->
+      <div class="cards-container" id="cardsContainer">
         <div class="card" data-detail="keahlian">
           <h3>Keahlian & Kekurangan</h3>
           <p>Kemampuan dan kelemahan dalam bekerja dan belajar.</p>
@@ -42,14 +44,15 @@
         </div>
       </div>
 
-      <!-- Bagian kanan: Panel detail muncul -->
-      <div class="detail-panel" id="detailPanel">
-        <h3 id="detailTitle"></h3>
-        <p id="detailText"></p>
-      </div>
+      <!-- Panel detail di kanan -->
+      <aside class="detail-panel" id="detailPanel">
+        <h3 id="detailTitle">Klik salah satu kartu di kiri</h3>
+        <p id="detailText">Detail informasi akan muncul di sini.</p>
+      </aside>
     </div>
-  </section>
+  </main>
 
+  <!-- Footer -->
   <footer>
     © 2025 Aulia Devita Ariski | All Rights Reserved
   </footer>

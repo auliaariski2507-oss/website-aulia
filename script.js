@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailData = {
     keahlian: {
       title: "Keahlian & Kekurangan",
-      text: "Saya memiliki keahlian dalam desain UI/UX dan dasar pengembangan web. Kekurangan saya adalah terkadang terlalu perfeksionis dalam mengerjakan sesuatu, namun hal itu juga membuat saya lebih teliti."
+      text: "Saya memiliki keahlian dalam dan dasar pengembangan web. Kekurangan saya adalah terkadang terlalu perfeksionis dalam mengerjakan sesuatu, namun hal itu juga membuat saya lebih teliti."
     },
     hard: {
       title: "Hard Skill",
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     pendidikan: {
       title: "Riwayat Pendidikan",
-      text: "SDN 1 Contoh (2013-2019) → SMPN 2 Contoh (2019-2022) → SMAN 3 Mojokerto (2022-Sekarang)."
+      text: "SDN Tempuran (2015-2021) → SMPN 3 Mojokerto (2021-2024) → SMAN 3 Mojokerto (2024-Sekarang)."
     }
   };
 

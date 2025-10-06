@@ -1,71 +1,47 @@
-// === INTERAKSI PANEL DETAIL ===
-const cards = document.querySelectorAll(".card");
-const detailPanel = document.getElementById("detailPanel");
-const detailTitle = document.getElementById("detailTitle");
-const detailText = document.getElementById("detailText");
-const cardsContainer = document.querySelector(".cards-container");
+const boxes = document.querySelectorAll('.box');
+const detailPanel = document.getElementById('detailPanel');
+const detailTitle = document.getElementById('detailTitle');
+const detailContent = document.getElementById('detailContent');
+const boxList = document.getElementById('boxList');
 
-const detailContent = {
+const details = {
   keahlian: {
-    title: "Keahlian & Kekurangan",
-    text: `
-      <ul>
-        <li><strong>Keahlian:</strong> Desain UI/UX, Pemrograman Web, Public Speaking.</li>
-        <li><strong>Kekurangan:</strong> Kadang terlalu perfeksionis dan overthinking 😅.</li>
-      </ul>
-    `
+    title: 'Keahlian',
+    text: 'Saya memiliki kemampuan dalam desain UI/UX, coding front-end (HTML, CSS, JS), dan analisis data sederhana.'
+  },
+  kekurangan: {
+    title: 'Kekurangan',
+    text: 'Terkadang terlalu perfeksionis dalam pekerjaan, sehingga memakan waktu lebih lama untuk menyelesaikan suatu tugas.'
   },
   hard: {
-    title: "Hard Skill",
-    text: `
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Figma, Canva, Photoshop</li>
-        <li>Microsoft Office</li>
-      </ul>
-    `
+    title: 'Hard Skill',
+    text: 'HTML, CSS, JavaScript, Microsoft Excel, Figma, Canva, dan analisis data dasar.'
   },
   soft: {
-    title: "Soft Skill",
-    text: `
-      <ul>
-        <li>Komunikasi Efektif</li>
-        <li>Kerja Tim</li>
-        <li>Kreatif & Adaptif</li>
-      </ul>
-    `
+    title: 'Soft Skill',
+    text: 'Komunikasi yang baik, kerja sama tim, adaptif terhadap lingkungan baru, dan problem solving.'
   },
   pendidikan: {
-    title: "Riwayat Pendidikan",
-    text: `
-      <ul>
-        <li>SD Negeri 1 Contoh (2010–2016)</li>
-        <li>SMP Negeri 2 Contoh (2016–2019)</li>
-        <li>SMA Negeri 3 Mojokerto (2019–2022)</li>
-        <li>Universitas Contoh - Informatika (2022–Sekarang)</li>
-      </ul>
-    `
+    title: 'Riwayat Pendidikan',
+    text: 'Lulusan SMA Negeri 3 Mojokerto, jurusan IPA. Saat ini melanjutkan studi di bidang Teknologi Informasi.'
   }
 };
 
-cards.forEach(card => {
-  card.addEventListener("click", () => {
-    const type = card.getAttribute("data-detail");
-    const content = detailContent[type];
+boxes.forEach(box => {
+  box.addEventListener('click', () => {
+    const type = box.dataset.detail;
+    detailTitle.textContent = details[type].title;
+    detailContent.textContent = details[type].text;
 
-    // Tampilkan panel dengan isi
-    detailPanel.classList.add("show");
-    cardsContainer.classList.add("shift-left");
-
-    detailTitle.textContent = content.title;
-    detailText.innerHTML = content.text;
+    boxList.classList.add('shift-left');
+    detailPanel.classList.add('active');
   });
 });
 
-// Klik di luar panel untuk menutup
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".card") && !e.target.closest(".detail-panel")) {
-    detailPanel.classList.remove("show");
-    cardsContainer.classList.remove("shift-left");
+// Klik area kosong untuk menutup panel
+document.body.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('box') && !detailPanel.contains(e.target)) {
+    detailPanel.classList.remove('active');
+    boxList.classList.remove('shift-left');
   }
 });

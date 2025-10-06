@@ -1,4 +1,4 @@
-// Efek animasi smooth scroll masuk halaman
+// Efek animasi lembut saat halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".fade-in");
   sections.forEach((sec) => {
@@ -9,4 +9,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 200);
   });
 });
-

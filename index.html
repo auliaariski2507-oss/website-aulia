@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile Diri - Detail Interaktif</title>
-
-  <!-- Menghubungkan CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya - Aulia Devita Ariski</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Bagian Header -->
-  <header>
-    <h1>Detail Profil</h1>
-  </header>
+  <!-- Navigasi -->
+  <nav class="navbar">
+    <h1 class="logo">My Profile</h1>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="detail.html">Detail Profile</a></li>
+    </ul>
+  </nav>
 
-  <!-- Kontainer utama -->
-  <main class="profile-container">
-    <!-- Daftar kotak (menu profil) -->
-    <section class="box-list" id="boxList">
-      <div class="box" data-detail="keahlian">Keahlian</div>
-      <div class="box" data-detail="kekurangan">Kekurangan</div>
-      <div class="box" data-detail="hard">Hard Skill</div>
-      <div class="box" data-detail="soft">Soft Skill</div>
-      <div class="box" data-detail="pendidikan">Riwayat Pendidikan</div>
-    </section>
+  <!-- Bagian utama -->
+  <main class="home-section fade-in">
+    <div class="profile-photo">
+      <img src="foto.jpg" alt="Foto Aulia Devita Ariski">
+    </div>
 
-    <!-- Panel detail yang muncul di kanan -->
-    <aside class="detail-panel" id="detailPanel">
-      <h2 id="detailTitle">Judul</h2>
-      <p id="detailContent">Klik salah satu kotak di kiri untuk melihat detailnya.</p>
-    </aside>
+    <div class="profile-desc">
+      <h2>Halo, Saya <span>Aulia Devita Ariski</span></h2>
+      <p>
+        Saya adalah seorang pelajar yang memiliki minat dalam dunia teknologi dan desain. 
+        Saya senang mempelajari hal-hal baru, terutama di bidang pengembangan web dan UI/UX. 
+        Bagi saya, setiap ide bisa diwujudkan melalui kreativitas dan kemauan untuk terus belajar.
+      </p>
+      <a href="detail.html" class="btn">Lihat Detail Profil</a>
+    </div>
   </main>
 
-  <!-- Menghubungkan JavaScript -->
+  <footer>
+    © 2025 Aulia Devita Ariski | All Rights Reserved
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* Reset dan font */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Tampilan dasar */
 body {
   background: linear-gradient(135deg, #e6f0ff, #ffffff);
   color: #1e3a8a;
@@ -16,6 +18,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Header */
 header {
   margin-bottom: 30px;
   text-align: center;
@@ -26,22 +29,26 @@ header h1 {
   color: #1e40af;
 }
 
+/* Kontainer utama */
 .profile-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  transition: all 0.6s ease;
   position: relative;
   width: 80%;
+  transition: all 0.6s ease;
 }
 
+/* Daftar kotak */
 .box-list {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
+/* Kotak utama */
 .box {
   width: 180px;
   height: 150px;
@@ -54,60 +61,74 @@ header h1 {
   font-weight: 600;
   color: #1e3a8a;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/* Efek hover */
 .box:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background: #f0f7ff;
 }
 
+/* Panel detail (muncul di kanan) */
 .detail-panel {
   position: absolute;
+  top: 0;
   right: -100%;
   width: 40%;
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 20px;
-  transition: right 0.6s ease, opacity 0.6s ease;
+  padding: 25px;
   opacity: 0;
+  transition: right 0.6s ease, opacity 0.6s ease;
 }
 
+/* Panel aktif */
 .detail-panel.active {
   right: 0;
   opacity: 1;
 }
 
+/* Saat panel aktif, kotak bergeser ke kiri */
 .shift-left {
   transform: translateX(-25%);
 }
 
+/* Judul dan isi detail */
 .detail-panel h2 {
   color: #1e40af;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .detail-panel p {
   color: #1e3a8a;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
+/* Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .profile-container {
     flex-direction: column;
+    align-items: center;
   }
+
   .box-list {
-    flex-wrap: wrap;
     justify-content: center;
   }
+
   .detail-panel {
     position: static;
     width: 90%;
     margin-top: 20px;
     opacity: 1 !important;
     right: 0 !important;
+    transition: none;
   }
+
   .shift-left {
     transform: none;
   }
